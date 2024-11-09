@@ -5,14 +5,23 @@
     <title>Ropa Davila</title>
   </head>
   <body>
-    <div> 
-        <h1><a href="/">Ropa Davila</a></h1>
-        <h2> OFERTAS %20 x2</h2>
-        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ea voluptatibus provident sit libero voluptas nemo, recusandae obcaecati dolorem debitis architecto culpa, suscipit, mollitia quo incidunt iure soluta inventore aspernatur voluptatum?</p>
-        <h3>ROPA DE PRIMERA</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam est quae molestias similique nobis dignissimos et pariatur, facere distinctio aperiam dolores eos hic fugiat modi animi numquam corporis saepe suscipit?</p>
-        <h4>ROPA DE SEGUNDA</h4>
-    </div>
+    <div>
+      <h1><a href="/">Django Girls Blog</a></h1>
+  </div>
+
+  
+  {% for post in posts %}
+  
+
+  <div>
+    <p> publicado: {{ post.published_date }}</p>
+        <h2><a href="">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+  </div>
+    
+  {% endfor %}
+     
+    
     <header></header>
     <main></main>
     <footer></footer>
