@@ -1,30 +1,70 @@
+
 <!DOCTYPE html>
+{% load static %}
 <html lang="">
   <head>
     <meta charset="utf-8">
-    <title>Ropa Davila</title>
+    
+    <title>PREDATOR BOSS </title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='{% static "/css/imagenes/imagengris.jpg" %}' rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
   </head>
   <body>
-    <div>
-      <h1><a href="/">Django Girls Blog</a></h1>
-  </div>
-
-  
-  {% for post in posts %}
   
 
-  <div>
-    <p> publicado: {{ post.published_date }}</p>
-        <h2><a href="">{{ post.title }}</a></h2>
-        <p>{{ post.text|linebreaksbr }}</p>
+  
+  <div class="page-header">
+      <h1><a href="/">PREDATOR BOSS</a></h1>
+      
   </div>
+  
+  <img src="/static/css/imagenes/imagengris.jpg">
+  
+
+  <div class="content container">
+    <div class="row">
+        <div class="col-md-8">
+            {% for post in posts %}
+                <div class="post">
+                    <div class="date">
+                        <p>publicado: {{ post.published_date }}</p>
+                    </div>
+                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+                    <p>{{ post.text|linebreaksbr }}</p>
+                    
+                        
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+<div>
+    <em> todo tipo de productos</em>
+    <p>hola mundo<br/>
+        tudu bem?
+    </p>
+    <a href=" https://www.inversoro.es/precio-del-oro/hoy/gramos/USD/" class="q-link" target="_blank">
+        <q>
+            ESTO ES UN TEXT CITADO
+        </q>
+    <p>hipotenusa<sup>2</sup> = cateto1<sup>2</sup>+cateto2<sup>2</sup></p>
     
-  {% endfor %}
+    </a>
+
+
+</div>
+  
      
     
-    <header></header>
-    <main></main>
-    <footer></footer>
+  <header></header>
+  <main></main>
+  <footer></footer>
   </body>
 </html>
 
