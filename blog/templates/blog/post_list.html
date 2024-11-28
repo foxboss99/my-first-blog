@@ -1,73 +1,18 @@
 
-<!DOCTYPE html>
-{% load static %}
-<html lang="">
-  <head>
-    <meta charset="utf-8">
-    
-    <title>PREDATOR BOSS </title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href='{% static "/css/imagenes/imagengris.jpg" %}' rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-    <link rel="stylesheet" href="{% static 'css/blog.css' %}">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-    <link href="//fonts.googleapis.com/css?family=Lobster&subset=latin,latin-ext" rel="stylesheet" type="text/css">
-  </head>
-  <body>
-  
+{% extends 'blog/base.html' %}
 
-  
-  <div class="page-header">
-      <h1><a href="/">PREDATOR BOSS</a></h1>
-      
-  </div>
-  
-  <img src="/static/css/imagenes/imagengris.jpg">
-  
-
-  <div class="content container">
-    <div class="row">
-        <div class="col-md-8">
-            {% for post in posts %}
-                <div class="post">
-                    <div class="date">
-                        <p>publicado: {{ post.published_date }}</p>
-                    </div>
-                    <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
-                    <p>{{ post.text|linebreaksbr }}</p>
-                    
-                        
-                </div>
-            {% endfor %}
+{% block content %}
+    {% for post in posts %}
+    <div class="post">
+        <div class="date">
+            {{ post.published_date }}
         </div>
+        <h2><a href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h2>
+        <p>{{ post.text|linebreaksbr }}</p>
+    
+        
     </div>
-</div>
-
-<div>
-    <em> todo tipo de productos</em>
-    <p>hola mundo<br/>
-        tudu bem?
-    </p>
-    <a href=" https://www.inversoro.es/precio-del-oro/hoy/gramos/USD/" class="q-link" target="_blank">
-        <q>
-            ESTO ES UN TEXT CITADO
-        </q>
-    <p>hipotenusa<sup>2</sup> = cateto1<sup>2</sup>+cateto2<sup>2</sup></p>
-    
-    </a>
-
-
-</div>
+    {% endfor %}
+{% endblock %}
   
-     
-    
-  <header></header>
-  <main></main>
-  <footer></footer>
-  </body>
-</html>
-
-
-
 
